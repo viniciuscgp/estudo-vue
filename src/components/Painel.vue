@@ -3,7 +3,6 @@
       <header>
          <p>Control Panel</p>
       </header>
-      <br />
       <div class="linha">
          <div class="coluna">
             <label for="">x-offset</label>
@@ -44,7 +43,7 @@
          </div>
       </div>
 
-      <div class="cor">
+      <div class="linha cor">
          <label for="">Shadow color: </label>
          <input @change="notifica" type="color" id="" v-model="cor" />
       </div>
@@ -114,7 +113,7 @@
    }
 </script>
 
-<style>
+<style scoped>
    .painel {
       display: flex;
       flex-direction: column;
@@ -129,19 +128,20 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      padding: 5px;
+      padding: 1px 5px 1px 5px;
    }
 
    .painel .coluna {
       display: flex;
       flex-direction: column;
-      margin: 10px;
-      padding: 5px;
+      padding: 1px 5px 1px 5px;
+      margin: 1px 5px 1px 5px;
    }
 
    .painel header {
       padding: 8px;
       margin: 0px;
+
       background-color: #404040;
    }
 
@@ -152,9 +152,21 @@
    .painel input {
       font-size: 2em;
       width: 60px;
+      text-align: center;
    }
    .painel .cor {
-      margin: 10px;
+      margin: 5px;
       padding: 5px;
+   }
+   .painel label {
+      margin: 5px;
+   }
+   input[type="color"] {
+      padding: 0px;
+      margin: 0px;
+      border: none;
+   }
+   .b {
+      border: 5px solid white !important;
    }
 </style>

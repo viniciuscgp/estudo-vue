@@ -4,7 +4,7 @@
          <h1>Y A S B</h1>
          <h3>Yet Another Shadow Builder</h3>
       </header>
-      <div style="width: 100%; height: 100%" class="container-coluna b">
+      <div style="width: 100%; height: 100%" class="container-coluna">
          <Painel @onMudouAlgumValor="mudouAlgumValor" />
          <Box :xoff="xoff" :yoff="yoff" :blurr="blurr" :sprr="sprr" :cor="cor">
          </Box>

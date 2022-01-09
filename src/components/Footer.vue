@@ -1,9 +1,11 @@
 <template>
-   <div class="footer">
+   <div class="footer row">
       <a href="https://twitter.com/viniciuscgp">
-         <span>Me siga no </span>
+         <div class="row">
+            <span>Me siga no </span>
+            <img width="16" height="16" src="@/assets/twiterlogo.png" alt="" />
+         </div>
       </a>
-      <img width="16" height="16" src="@/assets/twiterlogo.png" alt="" />
    </div>
 </template>
 
@@ -13,12 +15,8 @@
    }
 </script>
 
-<style>
+<style scoped>
    .footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       height: 40px;
       width: 100%;
@@ -27,6 +25,12 @@
       background-color: #404040;
       color: white;
       font-size: small;
+   }
+   .footer .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
    }
    .footer a {
       text-decoration: none;
