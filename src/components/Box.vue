@@ -3,7 +3,18 @@
       <p style="color: rgb(90, 90, 90)">
          parameters: offset-x | offset-y | blur-radius | spread-radius | color
       </p>
-      <p>box-shadow: {{ xoff }} {{ yoff }} {{ blurr }} {{ sprr }} {{ cor }}</p>
+      <br />
+      <input
+         id="texto"
+         type="text"
+         class="text"
+         size="30"
+         spellcheck="false"
+         ref="texto"
+         readonly="readonly"
+         v-bind:value="builded"
+      />
+      <button @click="copiarClipboard">Copy to clipboard</button>
    </div>
 </template>
 
@@ -21,9 +32,18 @@
             return {
                boxShadow: `${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor}`,
             };
+         },
+         builded() {
+            return `boxShadow: ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor};`
          }
+
       },
-      mounted() {
+      methods: {
+         copiarClipboard() {
+            document.execCommand('copy');
+            this.$refs.texto.select()
+
+         }
       }
 
    }
@@ -32,10 +52,14 @@
 <style scoped>
    .box {
       border: 1px solid black;
-      width: 200px;
-      height: 100px;
+      width: 300px;
+      height: 150px;
       margin: 40px;
       text-align: center;
       padding: 10px;
+   }
+   .box button {
+      padding: 10px;
+      margin: 10px;
    }
 </style>
