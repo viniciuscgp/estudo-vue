@@ -8,8 +8,8 @@
          <Painel @onMudouAlgumValor="mudouAlgumValor" />
          <Box :xoff="xoff" :yoff="yoff" :blurr="blurr" :sprr="sprr" :cor="cor">
          </Box>
-         <Footer />
       </div>
+      <Footer />
    </div>
 </template>
 
@@ -52,6 +52,11 @@
       margin: 0px;
       padding: 0px;
    }
+
+   body {
+      background-color: rgb(69, 127, 150);
+   }
+
    #app {
       width: 100vw;
       height: 100vh;
@@ -70,7 +75,7 @@
    }
    .header {
       padding: 20px;
-      margin: 5px 5px 30px 5px;
+      margin: 0px 0px 30px 0px;
       background-color: #303030;
       color: white;
    }

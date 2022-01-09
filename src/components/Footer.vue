@@ -1,8 +1,9 @@
 <template>
    <div class="footer">
       <a href="https://twitter.com/viniciuscgp">
-         Vamos nos seguir no Twitter ? Clica Aqui!
+         <span>Me siga no </span>
       </a>
+      <img width="16" height="16" src="@/assets/twiterlogo.png" alt="" />
    </div>
 </template>
 
@@ -15,10 +16,11 @@
 <style>
    .footer {
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      height: 30px;
+      height: 40px;
       width: 100%;
       position: fixed;
       bottom: 0px;
@@ -35,5 +37,8 @@
    }
    .footer a:hover {
       color: white;
+   }
+   .footer img {
+      margin: 10px;
    }
 </style>

@@ -57,6 +57,7 @@
       margin: 40px;
       text-align: center;
       padding: 10px;
+      background-color: burlywood;
    }
    .box button {
       padding: 10px;

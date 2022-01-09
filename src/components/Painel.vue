@@ -55,11 +55,11 @@
    export default {
       data() {
          return {
-            xoff: 2,
-            yoff: 2,
-            blurr: 1,
-            sprr: 1,
-            cor: "#FF4040"
+            xoff: 13,
+            yoff: 13,
+            blurr: 14,
+            sprr: 0,
+            cor: "#615656"
          }
       },
       methods: {
