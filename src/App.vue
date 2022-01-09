@@ -1,17 +1,34 @@
 <template>
-   <div id="app" class="container b">
-      <Box :xoff="25" :yoff="25" :cor="blue"></Box>
+   <div id="app">
+      <header class="header">
+         <h1>Y A S B</h1>
+         <h3>Yet Another Shadow Builder</h3>
+      </header>
+      <div style="width: 100%; height: 100%" class="container-coluna b">
+         <Painel @onMudouAlgumValor="mudouAlgumValor" />
+         <Box xoff="25" yoff="25" cor="blue"> </Box>
+         <Footer />
+      </div>
    </div>
 </template>
 
 <script>
-   import Box from '@/components/Box.vue'
+   import Box from './components/Box.vue'
+   import Painel from './components/Painel.vue'
+   import Footer from './components/Footer.vue'
 
    export default {
       name: 'App',
       components: {
-         Box
+         Box,
+         Painel,
+         Footer
       },
+      methods: {
+         mudouAlgumValor() {
+            alert("OK")
+         }
+      }
    }
 </script>
 
@@ -24,15 +41,23 @@
    #app {
       width: 100vw;
       height: 100vh;
+      text-align: center;
    }
 
    .b {
-      border: 15px solid blueviolet;
+      border: 0px solid blueviolet;
    }
 
-   .container {
+   .container-coluna {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
+   }
+   .header {
+      padding: 20px;
+      margin: 5px 5px 30px 5px;
+      background-color: #303030;
+      color: white;
    }
 </style>

@@ -1,16 +1,14 @@
 <template>
    <div :style="estilo" class="box">
-      <p>{{ estilo }}</p>
+      <p>Xoff:{{ xoff }}</p>
+      <p>Yoff:{{ yoff }}</p>
+      <p>Cor:{{ cor }}</p>
    </div>
 </template>
 
 <script>
    export default {
-      props: [
-         'xoff',
-         'yoff',
-         'cor'
-      ],
+      props: ['xoff', 'yoff', 'cor'],
       computed: {
          estilo() {
             return {
@@ -19,7 +17,6 @@
          }
       },
       mounted() {
-         alert(this.cor)
       }
 
    }
@@ -28,8 +25,10 @@
 <style scoped>
    .box {
       border: 1px solid black;
-      width: 200px;
-      height: 200px;
-      margin: 20px;
+      width: 100px;
+      height: 100px;
+      margin: 40px;
+      text-align: center;
+      padding: 10px;
    }
 </style>
