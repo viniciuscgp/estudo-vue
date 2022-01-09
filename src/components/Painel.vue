@@ -154,6 +154,17 @@
       width: 60px;
       text-align: center;
    }
+   /* Chrome, Safari, Edge, Opera */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+   /* Firefox */
+   input[type="number"] {
+      -moz-appearance: textfield;
+   }
+
    .painel .cor {
       margin: 5px;
       padding: 5px;

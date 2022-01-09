@@ -1,20 +1,28 @@
 <template>
-   <div :style="estilo" class="box">
-      <p style="color: rgb(90, 90, 90)">
-         parameters: offset-x | offset-y | blur-radius | spread-radius | color
-      </p>
-      <br />
-      <input
-         id="texto"
-         type="text"
-         class="text"
-         size="30"
-         spellcheck="false"
-         ref="texto"
-         readonly="readonly"
-         v-bind:value="builded"
-      />
-      <button @click="copiarClipboard">Copy to clipboard</button>
+   <div>
+      <div :style="estilo" class="box">
+         <p style="color: rgb(90, 90, 90)">
+            parameters: offset-x | offset-y | blur-radius | spread-radius |
+            color <br /><br />
+            <strong style="font-size: 1.5em"> The Box </strong>
+         </p>
+         <br />
+      </div>
+
+      <div class="result">
+         <label for="">Result:</label>
+         <input
+            id="texto"
+            type="text"
+            class="text"
+            size="33"
+            spellcheck="false"
+            ref="texto"
+            readonly="readonly"
+            v-bind:value="builded"
+         />
+         <button @click="copiarClipboard">Copy to clipboard</button>
+      </div>
    </div>
 </template>
 
@@ -42,10 +50,8 @@
          copiarClipboard() {
             document.execCommand('copy');
             this.$refs.texto.select()
-
          }
       }
-
    }
 </script>
 
@@ -59,8 +65,19 @@
       padding: 10px;
       background-color: burlywood;
    }
-   .box button {
-      padding: 10px;
-      margin: 10px;
+   .result {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .result input {
+      padding: 7px;
+      margin: 7px;
+      font-size: 0.8em;
+   }
+   .result button {
+      padding: 7px;
+      margin: 7px;
    }
 </style>
