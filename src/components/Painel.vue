@@ -1,7 +1,7 @@
 <template>
    <div class="painel">
       <header>
-         <p>Controller</p>
+         <p>Control Panel</p>
       </header>
       <br />
       <div class="linha">
@@ -13,6 +13,7 @@
                <button @click="incXoff">+</button>
             </div>
          </div>
+
          <div class="coluna">
             <label for="">y-offset</label>
             <div>
@@ -22,6 +23,27 @@
             </div>
          </div>
       </div>
+
+      <div class="linha">
+         <div class="coluna">
+            <label for="">blur-radius</label>
+            <div>
+               <input type="number" v-model="blurr" />
+               <button @click="decBlurr">-</button>
+               <button @click="incBlurr">+</button>
+            </div>
+         </div>
+
+         <div class="coluna">
+            <label for="">spread-radius</label>
+            <div>
+               <input type="number" v-model="sprr" />
+               <button @click="decSprr">-</button>
+               <button @click="incSprr">+</button>
+            </div>
+         </div>
+      </div>
+
       <div class="cor">
          <label for="">Shadow color: </label>
          <input @change="notifica" type="color" id="" v-model="cor" />
@@ -33,8 +55,10 @@
    export default {
       data() {
          return {
-            xoff: 5,
-            yoff: 5,
+            xoff: 2,
+            yoff: 2,
+            blurr: 1,
+            sprr: 1,
             cor: "#FF4040"
          }
       },
@@ -55,15 +79,38 @@
             this.yoff--;
             this.notifica();
          },
+         incBlurr() {
+            this.blurr++;
+            this.notifica();
+         },
+         decBlurr() {
+            this.blurr--;
+            this.notifica();
+         },
+         incSprr() {
+            this.sprr++;
+            this.notifica();
+         },
+         decSprr() {
+            this.sprr--;
+            this.notifica();
+         },
+
          notifica() {
             this.$emit("onMudouAlgumValor", {
                xoff: this.xoff,
                yoff: this.yoff,
+               blurr: this.blurr,
+               sprr: this.sprr,
                cor: this.cor
             })
          }
 
+      },
+      mounted() {
+         this.notifica();
       }
+
    }
 </script>
 
