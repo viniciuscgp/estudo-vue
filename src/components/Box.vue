@@ -34,7 +34,7 @@
             };
          },
          builded() {
-            return `boxShadow: ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor};`
+            return `box-shadow: ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor};`
          }
 
       },
