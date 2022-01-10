@@ -29,6 +29,7 @@
 <script>
    export default {
       props: {
+         inset: String,
          xoff: Number,
          yoff: Number,
          blurr: Number,
@@ -38,13 +39,12 @@
       computed: {
          estilo() {
             return {
-               boxShadow: `${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor}`,
+               boxShadow: `${this.inset} ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor}`,
             };
          },
          builded() {
-            return `box-shadow: ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor};`
-         }
-
+            return `box-shadow:${this.inset} ${this.xoff}px ${this.yoff}px ${this.blurr}px ${this.sprr}px ${this.cor};`
+         },
       },
       methods: {
          copiarClipboard() {

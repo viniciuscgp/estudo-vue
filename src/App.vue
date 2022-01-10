@@ -6,7 +6,14 @@
       </header>
       <div style="width: 100%; height: 100%" class="container-coluna">
          <Painel @onMudouAlgumValor="mudouAlgumValor" />
-         <Box :xoff="xoff" :yoff="yoff" :blurr="blurr" :sprr="sprr" :cor="cor">
+         <Box
+            :inset="inset"
+            :xoff="xoff"
+            :yoff="yoff"
+            :blurr="blurr"
+            :sprr="sprr"
+            :cor="cor"
+         >
          </Box>
       </div>
       <Footer />
@@ -27,6 +34,7 @@
       },
       methods: {
          mudouAlgumValor(dados) {
+            this.inset = dados.inset;
             this.xoff = dados.xoff;
             this.yoff = dados.yoff;
             this.blurr = dados.blurr;
@@ -36,6 +44,7 @@
       },
       data() {
          return {
+            inset: false,
             xoff: 1,
             yoff: 1,
             blurr: 1,
