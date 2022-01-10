@@ -43,6 +43,17 @@
          </div>
       </div>
 
+      <div class="linha">
+         <input
+            ref="inset"
+            @change="notifica"
+            type="checkbox"
+            name=""
+            id="inset"
+         />
+         <label for="inset">Inset</label>
+      </div>
+
       <div class="linha cor">
          <label for="">Shadow color: </label>
          <input @change="notifica" type="color" id="" v-model="cor" />
@@ -58,6 +69,7 @@
             yoff: 13,
             blurr: 14,
             sprr: 0,
+            inset: "",
             cor: "#615656"
          }
       },
@@ -96,7 +108,10 @@
          },
 
          notifica() {
+            this.$refs.inset.checked ? this.inset = "inset" : this.inset = ""
+
             this.$emit("onMudouAlgumValor", {
+               inset: this.inset,
                xoff: this.xoff,
                yoff: this.yoff,
                blurr: this.blurr,
@@ -128,6 +143,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      align-items: center;
       padding: 1px 5px 1px 5px;
    }
 
@@ -165,18 +181,25 @@
       -moz-appearance: textfield;
    }
 
+   input[type="checkbox"] {
+      transform: scale(1.5);
+   }
+
    .painel .cor {
       margin: 5px;
       padding: 5px;
    }
+
    .painel label {
       margin: 5px;
    }
+
    input[type="color"] {
       padding: 0px;
       margin: 0px;
       border: none;
    }
+
    .b {
       border: 5px solid white !important;
    }
